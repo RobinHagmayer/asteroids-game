@@ -40,6 +40,11 @@ def main():
                 print("Game over!")
                 exit()
 
+            for bullet in shots:
+                if asteroid.is_colliding_with(bullet):
+                    asteroid.kill()
+                    bullet.kill()
+
         screen.fill("black")
 
         for draw_thing in drawable:
